@@ -5,6 +5,8 @@
     <RootNamespace>Microsoft.AspNetCore.DataProtection</RootNamespace>
     <Authors>daixinkai</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>support System.Web.MachineKey</Description>
+    <PackageProjectUrl>https://github.com/daixinkai/AspNetCore.Owin/tree/master/src/DataProtection</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

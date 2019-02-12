@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>daixinkai</Authors>
     <Company />
-    <PackageProjectUrl>https://github.com/daixinkai/AspNetCore.Owin/tree/master/src/Authentication/src</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/daixinkai/AspNetCore.Owin/tree/master/src/Authentication</PackageProjectUrl>
     <Description>support Microsoft.Owin.Security.Cookies</Description>
     <RootNamespace>Microsoft.AspNetCore.Authentication.Cookies</RootNamespace>
   </PropertyGroup>
