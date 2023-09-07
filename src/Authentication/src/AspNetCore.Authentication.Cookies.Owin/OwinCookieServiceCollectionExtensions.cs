@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using System;
@@ -11,7 +10,7 @@ using System.Text;
 namespace Microsoft.Extensions.DependencyInjection
 {
     [EditorBrowsable(EditorBrowsableState.Never)]
-    public static class ServiceCollectionExtensions
+    public static class OwinCookieServiceCollectionExtensions
     {
         public static AuthenticationBuilder AddOwinCookie(this AuthenticationBuilder builder, int formartVersion)
         {

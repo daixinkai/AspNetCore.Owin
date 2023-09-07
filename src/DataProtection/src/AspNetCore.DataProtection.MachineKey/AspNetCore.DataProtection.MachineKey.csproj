@@ -1,15 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461;</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net461;netcoreapp3.1;net6;</TargetFrameworks>
     <RootNamespace>Microsoft.AspNetCore.DataProtection</RootNamespace>
     <Authors>daixinkai</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>support System.Web.MachineKey</Description>
     <PackageProjectUrl>https://github.com/daixinkai/AspNetCore.Owin/tree/master/src/DataProtection</PackageProjectUrl>
+	<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+	<NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'net461'">
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="2.1.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.0" />
@@ -19,8 +21,8 @@
     <Reference Include="System.Web" />
   </ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\AspNetCore.DataProtection.MachineKey.xml</DocumentationFile>
-  </PropertyGroup>
-  
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0' And '$(TargetFramework)' != 'net461'">
+  	<FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
 </Project>

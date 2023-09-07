@@ -86,6 +86,17 @@ namespace Microsoft.AspNetCore.Authentication
             //    writer.Write(bc.Token.Length);
             //    writer.Write(bc.Token);
             //}
+
+            var bc = identity.BootstrapContext as string;
+            if (bc == null || string.IsNullOrWhiteSpace(bc))
+            {
+                writer.Write(0);
+            }
+            else
+            {
+                writer.Write(bc.Length);
+                writer.Write(bc);
+            }
             PropertiesSerializer.Default.Write(writer, model.Properties);
         }
 
@@ -117,10 +128,11 @@ namespace Microsoft.AspNetCore.Authentication
             }
             var identity = new ClaimsIdentity(claims, authenticationType, nameClaimType, roleClaimType);
             int bootstrapContextSize = reader.ReadInt32();
-            //if (bootstrapContextSize > 0)
-            //{
-            //    identity.BootstrapContext = new BootstrapContext(reader.ReadString());
-            //}
+            if (bootstrapContextSize > 0)
+            {
+                //identity.BootstrapContext = new BootstrapContext(reader.ReadString());
+                identity.BootstrapContext = reader.ReadString();
+            }
 
             AuthenticationProperties properties = PropertiesSerializer.Default.Read(reader);
             return new AuthenticationTicket(new ClaimsPrincipal(identity), properties, authenticationType);
