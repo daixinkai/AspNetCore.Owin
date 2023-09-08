@@ -12,7 +12,9 @@ namespace Microsoft.AspNetCore.DataProtection.MachineKey.Test
         [TestMethod]
         public void TestMethod1()
         {
-            Microsoft.Extensions.DependencyInjection.ServiceCollection services = new Extensions.DependencyInjection.ServiceCollection();
+            var services = new ServiceCollection();
+
+            services.AddDataProtection();
 
             services.AddMachineKeyDataProtection(options =>
             {
@@ -39,7 +41,9 @@ namespace Microsoft.AspNetCore.DataProtection.MachineKey.Test
 
             BinaryFormatter formatter = new BinaryFormatter();
             MemoryStream stream = new MemoryStream();
+#pragma warning disable SYSLIB0011 // 类型或成员已过时
             formatter.Serialize(stream, ticket);
+#pragma warning restore SYSLIB0011 // 类型或成员已过时
             stream.Position = 0;
 
             var buffer = stream.ToArray();
@@ -57,7 +61,9 @@ namespace Microsoft.AspNetCore.DataProtection.MachineKey.Test
 
             stream.Position = 0;
 
+#pragma warning disable SYSLIB0011 // 类型或成员已过时
             Ticket ticket2 = formatter.Deserialize(stream) as Ticket;
+#pragma warning restore SYSLIB0011 // 类型或成员已过时
 
 
             Assert.AreNotEqual(ticket, ticket2);

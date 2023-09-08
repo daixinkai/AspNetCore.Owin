@@ -16,7 +16,7 @@ namespace Microsoft.AspNetCore.DataProtection
             _machineKeyConfig = machineKeyConfig;
         }
 
-        MachineKeyConfig _machineKeyConfig;
+        private MachineKeyConfig _machineKeyConfig;
 
         public MachineKeyConfig MachineKeyConfig
         {
@@ -36,9 +36,9 @@ namespace Microsoft.AspNetCore.DataProtection
         }
 
 
-        ICryptoServiceProvider _cryptoServiceProvider;
+        private ICryptoServiceProvider _cryptoServiceProvider;
 
-        ICryptoServiceProvider CryptoServiceProvider
+        private ICryptoServiceProvider CryptoServiceProvider
         {
             get
             {
@@ -64,10 +64,10 @@ namespace Microsoft.AspNetCore.DataProtection
         }
 
 
-        string _primaryPurpose;
+        private string _primaryPurpose;
 
-        Purpose _purpose;
-        Purpose Purpose
+        private Purpose _purpose;
+        private Purpose Purpose
         {
             get
             {

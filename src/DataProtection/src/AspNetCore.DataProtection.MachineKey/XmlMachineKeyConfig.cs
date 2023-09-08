@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace Microsoft.AspNetCore.DataProtection
 {
-    class XmlMachineKeyConfig : MachineKeyConfig
+    internal class XmlMachineKeyConfig : MachineKeyConfig
     {
 
         public XmlMachineKeyConfig(FileInfo fileInfo)
@@ -35,7 +35,7 @@ namespace Microsoft.AspNetCore.DataProtection
             Init(xmlDocument);
         }
 
-        void Init(XmlDocument xmlDocument)
+        private void Init(XmlDocument xmlDocument)
         {
             Decryption = GetAttributeValue(xmlDocument.DocumentElement, "decryption");
             DecryptionKey = GetAttributeValue(xmlDocument.DocumentElement, "decryptionKey");
@@ -49,7 +49,7 @@ namespace Microsoft.AspNetCore.DataProtection
             DataProtectorType = GetAttributeValue(xmlDocument.DocumentElement, "dataProtectorType");
         }
 
-        string GetAttributeValue(XmlElement xmlElement, string key)
+        private string GetAttributeValue(XmlElement xmlElement, string key)
         {
             string value = xmlElement.GetAttribute(key);
             if (string.IsNullOrWhiteSpace(value))

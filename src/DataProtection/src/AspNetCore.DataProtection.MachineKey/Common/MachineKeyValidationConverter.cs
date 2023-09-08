@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Microsoft.AspNetCore.DataProtection
 {
-    class MachineKeyValidationConverter
+    internal class MachineKeyValidationConverter
     {
         internal static string ConvertFromEnum(MachineKeyValidation enumValue)
         {

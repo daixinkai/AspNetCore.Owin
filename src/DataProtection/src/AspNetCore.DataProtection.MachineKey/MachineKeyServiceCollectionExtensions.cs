@@ -10,7 +10,7 @@ using System.Xml;
 namespace Microsoft.Extensions.DependencyInjection
 {
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public static class ServiceCollectionExtensions
+    public static class MachineKeyServiceCollectionExtensions
     {
         public static IMachineKeyDataProtectionBuilder AddMachineKeyDataProtection(this IServiceCollection services)
         {

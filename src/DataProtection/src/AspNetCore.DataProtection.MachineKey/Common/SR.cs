@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Microsoft.AspNetCore.DataProtection
 {
-    static class SR
+    internal static class SR
     {
 
         public const string Cannot_impersonate = "Cannot_impersonate";

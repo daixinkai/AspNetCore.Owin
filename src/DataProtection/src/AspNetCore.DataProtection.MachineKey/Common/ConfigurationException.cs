@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Microsoft.AspNetCore.DataProtection
 {
-    class ConfigurationException : Exception
+    internal class ConfigurationException : Exception
     {
         public ConfigurationException(string message) : base(message)
         {

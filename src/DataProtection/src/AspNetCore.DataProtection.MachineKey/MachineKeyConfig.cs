@@ -17,7 +17,7 @@ namespace Microsoft.AspNetCore.DataProtection
 
         #region property
 
-        string _decryption;
+        private string _decryption;
 
         public string Decryption
         {
@@ -37,7 +37,7 @@ namespace Microsoft.AspNetCore.DataProtection
         public string DecryptionKey { get; set; }
 
         private bool _validationIsCached;
-        string _validation;
+        private string _validation;
 
         private MachineKeyValidation _cachedValidationEnum;
 

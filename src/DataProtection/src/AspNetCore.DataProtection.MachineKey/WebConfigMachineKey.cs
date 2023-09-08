@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Microsoft.AspNetCore.DataProtection
 {
-    sealed class WebConfigMachineKey : MachineKey
+    internal sealed class WebConfigMachineKey : MachineKey
     {
 
         public override byte[] Protect(byte[] userData, params string[] purposes)

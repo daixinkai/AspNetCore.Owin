@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Microsoft.AspNetCore.DataProtection.Internal
 {
-    class MachineKeyDataProtectionBuilder : IMachineKeyDataProtectionBuilder
+    internal class MachineKeyDataProtectionBuilder : IMachineKeyDataProtectionBuilder
     {
         public MachineKeyDataProtectionOptions Options { get; set; }
     }

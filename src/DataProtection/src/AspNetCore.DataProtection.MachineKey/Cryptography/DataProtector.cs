@@ -8,7 +8,7 @@ using System.Text;
 namespace Microsoft.AspNetCore.DataProtection.Cryptography
 {
     // Data protectors should be derived from this class
-    abstract class DataProtector
+    internal abstract class DataProtector
     {
         private string m_applicationName;
         private string m_primaryPurpose;
