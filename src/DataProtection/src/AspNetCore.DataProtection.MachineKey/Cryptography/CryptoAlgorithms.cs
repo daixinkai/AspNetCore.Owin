@@ -38,14 +38,14 @@ namespace Microsoft.AspNetCore.DataProtection.Cryptography
 
         internal static Aes CreateAes()
         {
-            return new AesCryptoServiceProvider();
+            return Aes.Create();
         }
 
         [SuppressMessage("Microsoft.Cryptographic.Standard", "CA5351:DESCannotBeUsed", Justification = @"This is only used by legacy code; new features do not use this algorithm.")]
         [Obsolete("DES is deprecated and MUST NOT be used by new features. Consider using AES instead.")]
         internal static DES CreateDES()
         {
-            return new DESCryptoServiceProvider();
+            return DES.Create();
         }
 
         internal static HMACSHA1 CreateHMACSHA1()
@@ -77,14 +77,14 @@ namespace Microsoft.AspNetCore.DataProtection.Cryptography
         internal static SHA256 CreateSHA256()
         {
             //return new SHA256Cng();
-            return new SHA256CryptoServiceProvider();
+            return SHA256.Create();
         }
 
         [SuppressMessage("Microsoft.Cryptographic.Standard", "CA5353:TripleDESCannotBeUsed", Justification = @"This is only used by legacy code; new features do not use this algorithm.")]
         [Obsolete("3DES is deprecated and MUST NOT be used by new features. Consider using AES instead.")]
         internal static TripleDES CreateTripleDES()
         {
-            return new TripleDESCryptoServiceProvider();
+            return TripleDES.Create();
         }
 
     }

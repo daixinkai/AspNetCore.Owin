@@ -1,3 +1,5 @@
+using AspNetCore.DataProtection.MachineKey.Test;
+using BenchmarkDotNet.Running;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
@@ -13,8 +15,6 @@ namespace Microsoft.AspNetCore.DataProtection.MachineKey.Test
         public void TestMethod1()
         {
             var services = new ServiceCollection();
-
-            services.AddDataProtection();
 
             services.AddMachineKeyDataProtection(options =>
             {
@@ -72,5 +72,6 @@ namespace Microsoft.AspNetCore.DataProtection.MachineKey.Test
             Assert.AreEqual(ticket.Name, ticket2.Name);
 
         }
+
     }
 }

@@ -161,7 +161,7 @@ namespace Microsoft.AspNetCore.DataProtection.Cryptography
             byte[] bKeysRandom = new byte[autogenKeys.Length];
             byte[] bKeysStored = new byte[autogenKeys.Length];
             bool fGetStoredKeys = false;
-            using (RNGCryptoServiceProvider randgen = new RNGCryptoServiceProvider())
+            using (var randgen = RandomNumberGenerator.Create())
             {
                 // Gernerate random keys
                 randgen.GetBytes(bKeysRandom);
